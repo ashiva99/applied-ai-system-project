@@ -98,11 +98,18 @@ def mode_standard(songs: list) -> None:
     use_trending = input("\nApply trending boost? (y/n): ").strip().lower() == "y"
     trending_data = fetch_trending() if use_trending else None
 
-    recommendations = recommend_songs(prefs, songs, k=10)
+    pool = songs
+    if use_trending:
+        trend_tracks = load_trends_csv() or []
+        if trend_tracks:
+            pool = songs + trend_tracks
+
+    recommendations = recommend_songs(prefs, pool, k=10)
     if use_trending:
         recommendations = apply_trending_boost(recommendations, trending_data)
         if trending_data:
-            print(f"\nTrending data loaded ({', '.join(trending_data['trending_genres'])} are hot right now)")
+            extra = f" — pool expanded to {len(pool)} songs" if len(pool) > len(songs) else ""
+            print(f"\nTrending data loaded ({', '.join(trending_data['trending_genres'])} are hot right now{extra})")
 
     _print_recommendations(recommendations[:5], label=f"Top 5 for {profile_name}")
 
