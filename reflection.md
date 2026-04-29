@@ -1,5 +1,5 @@
 Github Link: https://github.com/ashiva99/applied-ai-system-project 
-
+Loom video: https://www.loom.com/share/e408c79ffa7a4e1eb4e446c8ff9f3835
 
 
 What are the blind spots in your system? Does your music recommender favor certain genres over others because of the dataset?
