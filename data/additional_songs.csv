@@ -1,0 +1,9 @@
+id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
+11,Old Photo Frames,Velvet Letter,folk,nostalgic,0.46,88,0.52,0.41,0.81
+12,Skyline Bounce,Metro Cipher,hip hop,confident,0.79,96,0.68,0.86,0.12
+13,Temple of Light,Aaroh Ensemble,classical,peaceful,0.22,64,0.58,0.18,0.97
+14,Island Signals,Coral Avenue,reggae,uplifting,0.63,92,0.83,0.74,0.39
+15,Iron Anthem,Rust Circuit,metal,rebellious,0.95,170,0.44,0.57,0.03
+16,Dusty Highway,Mason Creek,country,heartfelt,0.51,104,0.66,0.59,0.62
+17,Neon Tide,Pulse Harbor,house,euphoric,0.88,126,0.79,0.91,0.08
+18,Midnight Silk,June Ember,r&b,romantic,0.57,98,0.72,0.77,0.28

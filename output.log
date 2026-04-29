@@ -1,0 +1,124 @@
+python -m src.main        
+
+Applied AI Music System — 18 songs loaded.
+
+==================================================
+Select a mode:
+  1) Standard Recommendation
+  2) RAG Q&A
+  3) Trending Overview
+  q) Quit
+
+Enter choice: 3
+
+=== Trending Music Overview ===
+
+Fetch latest trends from Apple Music charts? (y/n): y
+  Contacting Apple Music... done — 100 tracks saved to data/trends.csv
+
+Current Trending Data:
+  Source:  Apple Music Charts (cached)
+  Updated: 2026-04-27T01:09:09.262862
+  Top Trending Genres:
+    • Alternative    (moody)  e.g. Noah Kahan  [hot: 0.41]
+    • Country        (heartfelt)  e.g. Ella Langley  [hot: 0.38]
+    • Pop            (happy)  e.g. Justin Bieber  [hot: 0.21]
+
+--- Top 5 Trending Genres  (100 tracks loaded) ---
+  • Alternative      popularity weight: 15.25
+  • Country          popularity weight: 14.35
+  • Pop              popularity weight: 8.02
+  • Hip-Hop          popularity weight: 7.89
+  • R&B              popularity weight: 2.24
+
+--- Top 5 Trending Tracks (by chart rank) ---
+
+  1. #  1  Choosin' Texas — Ella Langley
+       Genre: country  |  Mood: heartfelt  |  Popularity: 1.00
+  2. #  2  I Can't Love You Anymore — Ella Langley & Morgan Wallen
+       Genre: country  |  Mood: heartfelt  |  Popularity: 0.99
+  3. #  3  Be Her — Ella Langley
+       Genre: country  |  Mood: heartfelt  |  Popularity: 0.98
+  4. #  4  Doors — Noah Kahan
+       Genre: alternative  |  Mood: moody  |  Popularity: 0.97
+  5. #  5  The Great Divide — Noah Kahan
+       Genre: alternative  |  Mood: moody  |  Popularity: 0.96
+
+--- Trend-Boosted Catalog Picks ---
+  Trending genres get +0.5 bonus on top of base feature scoring.
+
+
+Top 5 Trend-Boosted Catalog Picks:
+
+  1. Dusty Highway — Mason Creek
+     Score: 3.42
+       • Energy match (+0.99)
+       • Valence match (+0.94)
+       • Danceability match (+0.99)
+       • Trending genre boost (+0.5)
+
+  2. Focus Flow — LoRoom
+     Score: 2.89
+       • Energy match (+0.90)
+       • Valence match (+0.99)
+       • Danceability match (+1.00)
+
+  3. Midnight Coding — LoRoom
+     Score: 2.86
+       • Energy match (+0.92)
+       • Valence match (+0.96)
+       • Danceability match (+0.98)
+
+  4. Library Rain — Paper Lanterns
+     Score: 2.83
+       • Energy match (+0.85)
+       • Valence match (+1.00)
+       • Danceability match (+0.98)
+
+  5. Sunrise City — Neon Echo
+     Score: 2.75
+       • Energy match (+0.68)
+       • Valence match (+0.76)
+       • Danceability match (+0.81)
+       • Trending genre boost (+0.5)
+
+  [Confidence: MEDIUM]
+  ⚠  No keyword matches found — using full catalog as context (lower precision).
+
+==================================================
+Select a mode:
+  1) Standard Recommendation
+  2) RAG Q&A
+  3) Trending Overview
+  q) Quit
+
+Enter choice: 2
+
+=== RAG Q&A Mode ===
+Ask natural-language questions about the music dataset.
+Type 'quit' to return to the main menu.
+
+  Index: 18 catalog songs + 100 trending tracks (trends.csv)
+
+Example questions:
+  • What is the top genre in this dataset?
+  • Which songs are good for working out?
+  • Tell me about chill songs with high acousticness.
+  • What artists make lofi music in this catalog?
+  • What are the current trending songs?
+  • Which trending songs have the highest popularity?
+
+Your question: top genre
+
+  Answer:
+  [Gemini error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 38.184883584s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}]
+
+Context used:
+Song: Sunrise City by Neon Echo. Genre: pop. Mood: happy. Energy: 0.82. Tempo: 118.0 BPM. Valence: 0.84. Danceability: 0.79. Acousticness: 0.18.
+Song: Midnight Coding by LoRoom. Genre: lofi. Mood: chill. Energy: 0.42. Tempo: 78.0 BPM. Valence: 0.56. Danceability: 0.62. Acousticness: 0.71.
+Song: Storm Runner by Voltline. Genre: rock. Mood: intense. Energy: 0.91. Tempo: 152.0 BPM. Valence: 0.48. Danceability: 0.66. Acousticness: 0.1.
+
+  Retrieved context:
+    - Sunrise City by Neon Echo (pop, happy)
+    - Midnight Coding by LoRoom (lofi, chill)
+    - Storm Runner by Voltline (rock, intense)
